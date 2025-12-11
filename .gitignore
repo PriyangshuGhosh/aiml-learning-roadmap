@@ -1,4 +1,12 @@
-/*
-!/.gitignore
-!/src/
-!/src/**
+# Ignore virtual environments
+ai_env/
+venv/
+.env/
+
+# Bytecode / cache
+__pycache__/
+*.pyc
+
+# OS/System junk
+.DS_Store
+Thumbs.db

@@ -1,0 +1,101 @@
+import numpy as np
+a = np.array([[1,2,3],
+             [4,5,6],
+             [7,8,9]])
+
+b= np.array([[12,13,14],
+            [14,15,16],
+            [17,18,19]])
+
+"""
+print(a+b)
+
+print(a-b)
+
+print(a*b)
+
+print(a/b)
+"""
+
+##################################
+"""
+
+#dot product
+print(np.dot(a,b))
+
+#cross product 
+print(a@b == a*b)
+
+
+#Transposing a matrix
+print(a.T)
+
+"""
+###################################
+
+"""
+Broadcasting allows arrays of different shapes to participate in operations. 
+NumPy “stretches” the smaller array to match the larger one without copying data.
+
+Rules:
+
+Compare shapes from right to left.
+
+Dimensions match if:
+
+    They are equal, or
+
+    One of them is 1.
+
+    If a dimension is missing, treat it as 1.
+
+    The smaller array is virtually replicated to match the larger array.
+"""
+##############################################
+"""
+x = np.ones((3,3))
+
+#here the x is brodcasted to match 3x3 form of a resulting into a 3x3 matrix
+print(x+a)
+
+#here y is broadcasted to match the 3x3 form of a resulting into a 3x3 matrix
+y= np.array([12,13,14])
+print(a+y) 
+"""
+###############################################
+"""
+Axis Concept
+
+The axis determines the direction along which operations are performed:
+        axis=0 → vertical, down the rows (operates column-wise)
+        axis=1 → horizontal, across the columns (operates row-wise)
+        
+"""
+###############################################
+"""
+
+print(np.sum(a,axis=0))#column individually
+print(np.sum(a,axis=1))#row individually
+
+print(np.mean(a,axis=1))
+"""
+#################################################
+
+                # MINI TASK #
+
+                #############
+
+#1) Normalizing a dataset 
+X = np.array([[1, 2, 3, 4],
+              [5, 6, 7, 8],
+              [9, 10, 11, 12]])
+
+Xmean = np.mean(X,axis = 0)
+std = np.std(X,axis = 0)
+
+Xnorm = (X - Xmean)/std
+
+print("Original X:\n", X)
+print("Mean of columns:", Xmean)
+print("Std of columns:", std)
+print("Normalized X:\n", Xnorm)

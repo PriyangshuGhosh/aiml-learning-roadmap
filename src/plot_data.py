@@ -79,3 +79,20 @@ plt.hist(data , bins = 20)
 plt.title("Histogram")
 plt.savefig("histogram")
 """
+####################################
+
+"""
+
+
+fig , ax = plt.subplots()
+ax2 = ax.twinx()
+x= np.linspace(2,10,1000)
+y1= np.sin(x)
+y2=np.cos(x)
+ax.plot(x,y1,color = "purple")
+ax2.plot(x,y2,'g')
+plt.title("sin and cos graph")
+plt.savefig("sin and cos")
+plt.close()
+"""
+######################################

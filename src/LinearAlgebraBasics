@@ -5,18 +5,20 @@ B=[[9,8,7],[6,5,4],[3,2,1]]
 
 ####################################
 #       Dot product
+
+"""
 result=0
 for i in range(len(A)):
     for j in range(len(A[i])):
         result += A[i][j] * B[i][j]
 print(f"The dot product is : {result}")
 
-
+"""
 ####################################
 
 #       Matrix Multiplication
 
-
+"""
 m=len(A)
 n=len(A[0])
 p=len(B[0])
@@ -32,3 +34,37 @@ print(f"The matrix multiplication is {C}")
 x=np.array(A)
 y=np.array(B)
 print(x@y)
+
+"""
+
+X=[[1,2,3],
+    [4,5,6],
+    [7,8,9]]
+
+W=[[1.2,2.3,3.4],
+   [1.4,1.5,1.6],
+   [4.0,4.5,4.0]]
+
+b=[[9,8,7],
+   [6,5,4],
+   [3,2,1]]
+
+m=len(X)
+n=len(X[0])
+p=len(W[0])
+
+C=[[0 for _ in range(p)] for _ in range(m)]
+
+for i in range(m):
+    for j in range(p):
+        for k in range(n):
+            C[i][j] += X[i][k] * W[k][j]
+y_pred = np.array(C)+np.array(b)
+print(y_pred)
+
+####################################
+# Verification using numpy
+Q=np.array(X)
+R=np.array(W)
+y=(Q@R)+np.array(b)
+print(y)

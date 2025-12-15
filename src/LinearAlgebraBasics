@@ -68,3 +68,12 @@ Q=np.array(X)
 R=np.array(W)
 y=(Q@R)+np.array(b)
 print(y)
+
+
+###################################
+# np.linalg function 
+
+
+# To normalize a vector 
+print(np.linalg.norm(Q))
+print(np.linalg.inv(W))
